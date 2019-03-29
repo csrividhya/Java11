@@ -1,7 +1,8 @@
 /*This is a program that's about the final keyword. Even though you make a class final, it doesn't ensure the immutability of that class.*/
 /*StringDupe is a final class with 2 data members, one of which is final and the other one isn't. This let's users to mutate objects of the final class - StringDupe*/
+/*In short, A final class is simply a class that can't be extended.*/
 
-package src.finalKeyword;
+package finalKeyword;
 
 import java.util.Date;
 
