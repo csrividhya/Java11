@@ -15,15 +15,17 @@ public class LocalClass {
 	}
 	
 	public void checkIfAdult() {
-		String nonStaticVar = "checker";
 		final String staticVar = "Hahaha";
 		
 		if(age>18)
 			isAdult=true;
 		
-		nonStaticVar+="!!";
-	
 	class LocalClassExample{
+		/*Local classes are non-static because they have access to instance members of the 
+		 * enclosing block. Consequently, they cannot contain most kinds of static declarations.*/
+		
+		//static String msg ="YOLO";  <-- Error 1
+		
 		/*local class can access only static or effectively static local variables of
 		 * enclosing class*/
 		public void printAdultOrNot() {
@@ -43,22 +45,17 @@ public class LocalClass {
 			 * The local variable nonStaticVar defined in enclosing scope should be final or 
 			effectively finally effectively final --> value remains unchanged*/
 			
-			//System.out.println(nonStaticVar);
-			System.out.println(staticVar);
-			
+			//System.out.println(nonStaticVar);  <----ERROR 2
+			System.out.println(staticVar);			
 		}
-	}
-	
+	}	
 	LocalClassExample checker = new LocalClassExample();
 	age=18;
-	checker.printAdultOrNot();
-		
+	checker.printAdultOrNot();		
 	}
 	
 	public static void main(String...strings) {
 		LocalClass obj = new LocalClass("sri",24);
-		obj.checkIfAdult();
-		
+		obj.checkIfAdult();		
 	}
-	
 }
